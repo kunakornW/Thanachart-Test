@@ -17,11 +17,7 @@ import ColorModeIconDropdown from '@/shared-theme/ColorModeIconDropdown';
 import stockService from '@/service/stockService';
 import iStockResponse from '@/model/response/stockResponse';
 
-interface iHome {
-  props: any
-}
-
-export default function Home({ props }: iHome) {
+export default function Home() {
   const [loading, setLoading] = React.useState<boolean>(false);
 
   const [products, setProducts] = React.useState<Array<iProductResponse>>([]);
@@ -61,7 +57,7 @@ export default function Home({ props }: iHome) {
   }
 
   return (
-    <AppTheme {...props}>
+    <AppTheme >
       <CssBaseline enableColorScheme />
       <Backdrop
         sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
